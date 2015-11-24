@@ -1,1 +1,1 @@
-# LAMB-project
+# LAMP-project
