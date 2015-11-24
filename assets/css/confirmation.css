@@ -1,0 +1,24 @@
+#wrapper {
+	border: 1px solid #ccc;
+	width: 500px;
+	/*height: 250px;*/
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	text-align: center;
+}
+
+#orderinfo {
+	border: 1px solid #ccc;
+	width: 400px;
+	height: 200px;
+	overflow: scroll;
+	margin-left: 49px;
+}
+
+#shippinginfo {
+	border: 1px solid #ccc;
+	width: 400px;
+	margin-left: 49px;
+	margin-top: 5px;
+}

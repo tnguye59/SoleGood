@@ -19,11 +19,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->output->enable_profiler(TRUE);
-		$this->load->view('welcome_message');
-
+		// $this->output->enable_profiler(TRUE);
+		$this->load->view('confirmation');
 	}
-
+}
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
