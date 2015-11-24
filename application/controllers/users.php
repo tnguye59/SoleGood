@@ -7,7 +7,7 @@ public function __construct()
 	{
 		parent::__construct();
 		//$this->load->controller('Products') //session controller will interact with products controller
-		$this->load->model('User'); //will need to load this model if sessions controller will hold user info AND register new users to DB. 
+		$this->load->model('User'); //will need to load this model if sessions controller will hold user info AND register new users to DB.
 		$this->load->library('form_validation');
 
 	}
@@ -37,7 +37,7 @@ public function register()
 		// die('in register method');
 		$this->User->add_user($userData);
 		$this->session->set_userdata('userInfo', $userData);
-		redirect('/sessions/welcome');  
+		redirect('/sessions/welcome');
 
 	}
 }
@@ -46,9 +46,10 @@ public function login()
 {
 	$email = $this->input->post('email');
 	$password = $this->input->post('password');
-	$userData = $this->User->get_user_by_email($email);
+	$post = $this->input->post();
+	$userData = $this->User->get_user_by_email($post);
 
-	if($userData && $userData['password'] == $password)
+	if($userData)
 	{
 		$user = array(
 			'id' => $userData['id'],
@@ -85,4 +86,4 @@ public function logout()
 
 
 
-} 
+}

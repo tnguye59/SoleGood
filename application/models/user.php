@@ -11,10 +11,10 @@ public function add_user($userData)
 	return $this->db->query($query, $values);
 }
 
-public function get_user_by_email($email)
+public function get_user_by_email($post)
 {
-	$query ="SELECT id, first_name, email, password FROM users WHERE email = ?";
-	$values = array($email);
+	$query ="SELECT id, first_name, email, password FROM users WHERE email = ? AND password = ?";
+	$values = array($post['email'], $post['password']);
 
 	return $this->db->query($query, $values)->row_array();
 }
