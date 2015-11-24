@@ -70,12 +70,10 @@
 						<label>Password</label>
 						<input type="text" name = "password" value="" class="input-xlarge">
 						<label>Confirm Password</label>
-						<input type="text" name = "confirm_passowrd" value="" class="input-xlarge">
-						</textarea>
-						<div>
-							<button class="btn btn-primary">Create Account</button>
-						</div>
+						<input type="text" name = "confirm_password" value="" class="input-xlarge">
+						<input class="btn btn-primary" type = 'submit' value = 'create account'>
 					</form>
+					<?php echo $this->session->flashdata('errors'); ?>
 				</div>
 				<div id="myTabContent" class="tab-content">
 				<div class="tab-pane active in" id="login">

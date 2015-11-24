@@ -4,13 +4,19 @@
 class Sessions extends CI_Controller {
 
 public function __construct()
-{
-	parent::__construct();
-	//$this->load->controller('Products') //session controller will interact with products controller
-	//$this->load->model('User') //will need to load this model if sessions controller will hold user info AND register new users to DB. 
-	$this->load->library('form_validation');
+	{
+		parent::__construct();
+		//$this->load->controller('Products') //session controller will interact with products controller
+		$this->load->model('User'); //will need to load this model if sessions controller will hold user info AND register new users to DB. 
+		$this->load->library('form_validation');
 
-}
+	}
+
+	public function index()
+	{
+		// $this->output->enable_profiler(TRUE);
+		$this->load->view('registration_login');
+	}
 
 public function register()
 {
@@ -27,7 +33,9 @@ public function register()
 	else
 	{
 		$userData = $this->input->post();
-		$this->user->add_user($userData);
+		// var_dump($userData);
+		// die('in register method');
+		$this->User->add_user($userData);
 		$this->session->set_userdata('userInfo', $userData);
 		redirect('/sessions/welcome');  
 
@@ -38,7 +46,7 @@ public function login()
 {
 	$email = $this->input->post('email');
 	$password = $this->input->post('password');
-	$userData = $this->user->get_user_by_email($email);
+	$userData = $this->User->get_user_by_email($email);
 
 	if($userData && $userData['password'] == $password)
 	{
