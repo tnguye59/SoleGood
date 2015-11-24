@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		// $this->output->enable_profiler(TRUE);
-		$this->load->view('confirmation');
+		$this->load->view('registration_login');
 	}
 }
 

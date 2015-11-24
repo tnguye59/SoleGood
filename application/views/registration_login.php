@@ -28,16 +28,16 @@
 			</ul>
 			<div id="myTabContent" class="tab-content">
 				<div class="tab-pane active in" id="login">
-					<form class="form-horizontal" action='' method="POST">
+					<form class="form-horizontal" action='/sessions/login' method="POST">
 						<fieldset>
 							<div id="legend">
 								<legend class="">Login</legend>
 							</div>    
 							<div class="control-group">
 								<!-- Username -->
-								<label class="control-label"  for="username">Username</label>
+								<label class="control-label"  for="email">Email</label>
 								<div class="controls">
-									<input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+									<input type="text" id="email" name="email" placeholder="" class="input-xlarge">
 								</div>
 							</div>
 							
@@ -60,17 +60,17 @@
 					</form>                
 				</div>
 				<div class="tab-pane fade" id="create">
-					<form id="tab">
-						<label>Username</label>
-						<input type="text" value="" class="input-xlarge">
+					<form id="tab" action = "/sessions/register" method = "post">
 						<label>First Name</label>
-						<input type="text" value="" class="input-xlarge">
+						<input type="text" name = "first_name" value="" class="input-xlarge">
 						<label>Last Name</label>
-						<input type="text" value="" class="input-xlarge">
+						<input type="text" name = "last_name" value="" class="input-xlarge">
 						<label>Email</label>
-						<input type="text" value="" class="input-xlarge">
-						<label>Address</label>
-						<textarea value="Smith" rows="3" class="input-xlarge">
+						<input type="text" name = "email" value="" class="input-xlarge">
+						<label>Password</label>
+						<input type="text" name = "password" value="" class="input-xlarge">
+						<label>Confirm Password</label>
+						<input type="text" name = "confirm_passowrd" value="" class="input-xlarge">
 						</textarea>
 						<div>
 							<button class="btn btn-primary">Create Account</button>
@@ -79,16 +79,16 @@
 				</div>
 				<div id="myTabContent" class="tab-content">
 				<div class="tab-pane active in" id="login">
-					<form class="form-horizontal" action='' method="POST">
+					<form class="form-horizontal" action='/sessions/login' method="POST">
 						<fieldset>
 							<div id="legend">
 								<legend class="">Admin</legend>
 							</div>    
 							<div class="control-group">
 								<!-- Username -->
-								<label class="control-label"  for="username">Username</label>
+								<label class="control-label"  for="email">Email</label>
 								<div class="controls">
-									<input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+									<input type="text" id="email" name="email" placeholder="" class="input-xlarge">
 								</div>
 							</div>
 							
