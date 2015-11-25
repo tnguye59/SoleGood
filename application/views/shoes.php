@@ -99,7 +99,7 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-3 img-portfolio">
-                <a href="portfolio-item.html">
+                <a href="/welcome/item_view">
                     <img class="img-responsive img-hover" src="http://placehold.it/750x450" alt="">
                 </a>
             </div>

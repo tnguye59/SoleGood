@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		// $this->output->enable_profiler(TRUE);
-		$this->load->view('registration_login');
+		$this->load->view('home');
 	}
 	public function about()
 
@@ -34,6 +34,10 @@ class Welcome extends CI_Controller {
 	public function shoes()
 	{
 		$this->load->view('shoes');
+	}
+	public function item_view()
+	{
+		$this->load->view('item_view');
 	}
 }
 

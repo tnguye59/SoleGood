@@ -72,8 +72,8 @@ public function login()
 public function welcome()
 {
 	$view_data['user'] = $this->session->userdata('userInfo');
-	$users=$this->Product->get_all_products($view_data['user']);
-	$this->load->view('home', $users);
+	// $users=$this->Product->get_all_products($view_data['user']);
+	$this->load->view('home', $view_data);
 	// not sure if i did this right lol
 }
 
