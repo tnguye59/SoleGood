@@ -32,7 +32,7 @@
 						<fieldset>
 							<div id="legend">
 								<legend class="">Login</legend>
-							</div>    
+							</div>
 							<div class="control-group">
 								<!-- Username -->
 								<label class="control-label"  for="email">Email</label>
@@ -40,7 +40,7 @@
 									<input type="text" id="email" name="email" placeholder="" class="input-xlarge">
 								</div>
 							</div>
-							
+
 							<div class="control-group">
 								<!-- Password-->
 								<label class="control-label" for="password">Password</label>
@@ -48,8 +48,8 @@
 									<input type="password" id="password" name="password" placeholder="" class="input-xlarge">
 								</div>
 							</div>
-							
-							
+
+
 							<div class="control-group">
 								<!-- Button -->
 								<div class="controls">
@@ -57,10 +57,10 @@
 								</div>
 							</div>
 						</fieldset>
-					</form>                
+					</form>
 				</div>
 				<div class="tab-pane fade" id="create">
-					<form id="tab" action = "/sessions/register" method = "post">
+					<form id="tab" action = "/users/register" method = "post">
 						<label>First Name</label>
 						<input type="text" name = "first_name" value="" class="input-xlarge">
 						<label>Last Name</label>
@@ -77,11 +77,11 @@
 				</div>
 				<div id="myTabContent" class="tab-content">
 				<div class="tab-pane active in" id="login">
-					<form class="form-horizontal" action='/sessions/login' method="POST">
+					<form class="form-horizontal" action='/users/login' method="POST">
 						<fieldset>
 							<div id="legend">
 								<legend class="">Admin</legend>
-							</div>    
+							</div>
 							<div class="control-group">
 								<!-- Username -->
 								<label class="control-label"  for="email">Email</label>
@@ -89,7 +89,7 @@
 									<input type="text" id="email" name="email" placeholder="" class="input-xlarge">
 								</div>
 							</div>
-							
+
 							<div class="control-group">
 								<!-- Password-->
 								<label class="control-label" for="password">Password</label>
@@ -97,8 +97,8 @@
 									<input type="password" id="password" name="password" placeholder="" class="input-xlarge">
 								</div>
 							</div>
-							
-							
+
+
 							<div class="control-group">
 								<!-- Button -->
 								<div class="controls">
@@ -106,7 +106,7 @@
 								</div>
 							</div>
 						</fieldset>
-					</form>                
+					</form>
 				</div>
 			</div>
 		</div>

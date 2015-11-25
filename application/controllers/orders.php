@@ -7,6 +7,7 @@ class Orders extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->output->enable_profiler(TRUE);
         $this->load->model('Order');
         $this->load->library('form_validation');
 
@@ -15,6 +16,7 @@ class Orders extends CI_Controller
     public function checkout_view()
     {
         //loads checkout view with session[cart] data
+        $this->load->view('checkout');
     }
 
     public function checkout()

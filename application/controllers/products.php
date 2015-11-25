@@ -4,13 +4,14 @@ class Products extends CI_Controller
 {
 	public function __construct()
 	{
-		//parent::__construct();
+		parent::__construct();
+			$this->output->enable_profiler(TRUE);
 		//$this->load->model('product');
 	}
 	public function product_view($id)
 	{
 		//link for this on view should follow /controller/product_view/.
-		//will take product id from main page and pull up product view page. 
+		//will take product id from main page and pull up product view page.
 		//will communicate with Product Model method get_product_by_id($id).
 		//$id = $this->session->userdata('productid')
 		//$product_info = $this->Product->get_product_by_id($id)
@@ -26,28 +27,28 @@ class Products extends CI_Controller
 
 	}
 
-	public function index_mens() 
+	public function index_mens()
 	{
 		//will load all men's shoes
 		//will communicate with Product Model method get_mens_products().
 		//loads partials
 	}
 
-	public function index_womens() 
+	public function index_womens()
 	{
 		//will load all women's shoes
 		//will communicate with Product Model method get_womens_products().
 		//loads partials
 	}
 
-	public function index_boys() 
+	public function index_boys()
 	{
 		//will load all boys's shoes
 		//will communicate with Product Model method get_boys_products().
 		//loads partials
 	}
 
-	public function index_girls() 
+	public function index_girls()
 	{
 		//will load all girls's shoes
 		//will communicate with Product Model method get_girls_products().
@@ -74,7 +75,7 @@ class Products extends CI_Controller
 	public function edit_product($id)
 	{
 		//will only be available if user is admin.
-		//links for this method will appear in view page if admin. 
+		//links for this method will appear in view page if admin.
 		//should load a view page with form to update product information.
 		//$product = array(
 		//	   'category' =>$this->input->post('category'),
@@ -85,7 +86,7 @@ class Products extends CI_Controller
 		//	   'gender' => $this->input->post('gender'),
 		//	);
 		// $this->Product->updated_product_info($product, $id);
-		// redirect('/'); 
+		// redirect('/');
 	}
 }
 
