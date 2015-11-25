@@ -12,7 +12,7 @@
 <body>
 	<div id = "wrapper">
 		<h3>Edit Existing Product Information</h3>
-		<form action = "/products/add_product" method = "post">
+		<form action = "/products/edit_product" method = "post">
 			<label>Category</label><select name = "category">
 								<option value = "Dress">Dress</option>
 								<option value = "Casual">Casual</option>
