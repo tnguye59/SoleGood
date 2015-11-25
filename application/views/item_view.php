@@ -66,7 +66,7 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">ITEM NAME
+                <h1 class="page-header"><?= $product_info['brand']?>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
@@ -83,11 +83,10 @@
                 <img class="img-responsive" src="http://placehold.it/750x450" alt="">
             </div>
             <div class="col-md-6">
-                <h2>PRODDUCT NAME</h2>
-                <p>Category</p>
-                <p>Price</p>
-                <p>Description</p>
-                <p>Description</p>
+                <h2><?= $product_info['name']?></h2>
+                <p><?= $product_info['category']?></p>
+                <p><?= $product_info['price']?></p>
+                <p><?= $product_info['description']?></p>
                 <form>
                     <p>
                         <select name="size">
@@ -146,7 +145,7 @@
         </div>
         <!-- /.row -->
 
-        
+
         <hr>
         <h4><a href="/welcome/contact">Contact us</a></h4>
 

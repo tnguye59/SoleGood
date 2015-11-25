@@ -6,7 +6,7 @@ class Products extends CI_Controller
 	{
 		parent::__construct();
 			$this->output->enable_profiler(TRUE);
-		//$this->load->model('product');
+		$this->load->model('Product');
 	}
 	public function product_view($id)
 	{
@@ -14,8 +14,9 @@ class Products extends CI_Controller
 		//will take product id from main page and pull up product view page.
 		//will communicate with Product Model method get_product_by_id($id).
 		//$id = $this->session->userdata('productid')
-		//$product_info = $this->Product->get_product_by_id($id)
-		//this->load->view('product_view', $product_info);
+		$product_info = $this->Product->get_product_by_id($id);
+		$view_data['product_info'] = $product_info;
+		$this->load->view('item_view', $view_data);
 	}
 
 	public function main_product_page()
@@ -23,7 +24,11 @@ class Products extends CI_Controller
 		//will load all products on main page
 		//will communication with Product Model method get_all_products().
 		//May also interact with Users Controller Welcome method?
-		//$this->Product->get_all_products();
+		$products = $this->Product->get_all_products();
+		$view_data['products'] = $products;
+		//var_dump($products);
+		//die("MAIN PROD PAGE");
+		$this->load->view('shoes', $view_data);
 
 	}
 

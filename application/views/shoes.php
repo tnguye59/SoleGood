@@ -98,6 +98,28 @@
 
         <!-- Projects Row -->
         <div class="row">
+<?php
+        foreach($products as $product){
+?>
+        <div class="col-md-3 img-portfolio">
+            <a href="/products/product_view/<?= $product['id'] ?>">
+                <img class="img-responsive img-hover" src="http://placehold.it/750x450" alt="">
+            </a>
+            <p>
+              <?= $product['name']?>
+            </p>
+            <p>
+              <?= $product['category']?>
+            </p>
+            <p>
+              <?= $product['price']?>
+            </p>
+        </div>
+
+<?php  }
+
+?>
+<!--
             <div class="col-md-3 img-portfolio">
                 <a href="/welcome/item_view">
                     <img class="img-responsive img-hover" src="http://placehold.it/750x450" alt="">
@@ -112,7 +134,7 @@
                 <a href="portfolio-item.html">
                     <img class="img-responsive img-hover" src="http://placehold.it/750x450" alt="">
                 </a>
-            </div>
+            </div> -->
         </div>
         <!-- /.row -->
 
