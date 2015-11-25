@@ -80,7 +80,7 @@
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                <img class="img-responsive" src="/assets/images/<?= $product_info['id'] ?>.png" alt="">
             </div>
             <div class="col-md-6">
                 <h2><?= $product_info['name']?></h2>

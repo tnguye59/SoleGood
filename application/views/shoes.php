@@ -103,7 +103,7 @@
 ?>
         <div class="col-md-3 img-portfolio">
             <a href="/products/product_view/<?= $product['id'] ?>">
-                <img class="img-responsive img-hover" src="http://placehold.it/750x450" alt="">
+                <img class="img-responsive img-hover" src="/assets/images/<?= $product['id'] ?>.png" alt="">
             </a>
             <p>
               <?= $product['name']?>
