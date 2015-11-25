@@ -45,7 +45,17 @@
                     <a href="/welcome/shoes">SHOP NOW</a>
                   </li>
                     <li>
+<?php
+                      if($this->session->userdata('userInfo')){
+?>
+
+                        <a href="/users/dashboard">DASHBOARD</a>
+<?php                 } else {
+
+?>
                         <a href="/users">Register/Login</a>
+<?php                   }
+?>
                     </li>
                     <li>
                         <a href="/welcome/cart">Cart</a>
