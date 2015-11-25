@@ -22,6 +22,19 @@ class Welcome extends CI_Controller {
 		// $this->output->enable_profiler(TRUE);
 		$this->load->view('registration_login');
 	}
+	public function about()
+
+	{
+		$this->load->view('about');
+	}
+	public function contact()
+	{
+		$this->load->view('contact');
+	}
+	public function shoes()
+	{
+		$this->load->view('shoes');
+	}
 }
 
 /* End of file welcome.php */

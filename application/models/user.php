@@ -19,6 +19,10 @@ public function get_user_by_email($post)
 	return $this->db->query($query, $values)->row_array();
 }
 
+public function add_customer_deatils($userid)
+{
+
+}
 
 
 }
