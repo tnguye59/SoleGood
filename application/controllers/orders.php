@@ -20,15 +20,19 @@ class Orders extends CI_Controller
     public function checkout()
     {
         //processes POST data on SUBMIT PURCHASE BUTTON
+        //$post = $this->input->post();
         //ADD ORDER
         //RETRIEVES INSERTED ID
+        //$order_id = $this->Order->add_order($post);
         //REDIRECTS TO CONFIRMATION/$id
+        //redirect('/orders/confirmation/'.$order_id);
     }
 
     public function confirmation($order_id)
     {
-        //get_order_by_id($order_id)
-        //load view (confirmation, order_details)
+        //$order_details = $this->Order->get_order_by_id($order_id);
+        //$view_data['order_details'];
+        //$this->load->view('confirmationpageorsomethingwhateveritsnameis', $view_data);
     }
 
 }
