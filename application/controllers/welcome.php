@@ -39,6 +39,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('item_view');
 	}
+	public function checkout()
+	{
+		$this->load->view('checkout');
+	}
 }
 
 /* End of file welcome.php */
