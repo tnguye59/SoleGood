@@ -22,24 +22,29 @@ public function get_mens_products()
 {
 	//will be used to select all men's products.
 	//interacts with index_mens, loads partial.
+
+	return $this->db->query("SELECT * FROM products WHERE gender = 'Mens'")->result_array();
 }
 
 public function get_womens_products()
 {
 	//will be used to select all women's products.
 	//interacts with index_womens, loads partial.
+	return $this->db->query("SELECT * FROM products WHERE gender = 'Womens'")->result_array();
 }
 
 public function get_boys_products()
 {
 	//will be used to select all boys's products.
 	//interacts with index_boys, loads partial.
+	return $this->db->query("SELECT * FROM products WHERE gender = 'Boys'")->result_array();
 }
 
 public function get_girls_products()
 {
 	//will be used to select all girls's products.
 	//interacts with index_girls, loads partial.
+	return $this->db->query("SELECT * FROM products WHERE gender = 'Girls'")->result_array();
 }
 
 public function add_new_product($product)

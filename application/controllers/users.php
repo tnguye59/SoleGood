@@ -13,6 +13,7 @@ public function __construct()
 		$this->load->model('Product');
 		$this->output->enable_profiler(TRUE);
 		$this->load->library('form_validation');
+		$this->load->library('cart');
 	}
 
 	public function index()
@@ -91,17 +92,49 @@ public function dashboard($userid)
 }
 public function add_to_cart()
 {
+	$data = array(
+			'id' => $this->input->post('product_id'),
+			'qty' =>$this->input->post('quantity'),
+			'price' =>$this->input->post('price'),
+			'name' =>$this->input->post('product_name'),
+			'options' => array('size' => $this->input->post('size'), 'brand' => $this->input->post('brand') )
+			// 'brand' =>$this->input->post('brand')
+			// 'size' =>$this->input->post('size'),   //optional array inputs
+		);
+
+	$this->cart->insert($data);
+
+	// var_dump($this->cart->contents());
+	// die('contents');
+	redirect('/welcome/cart');
 
 }
 
 public function edit_cart()
 {
+	// var_dump($this->input->post());
+	// die();
+	$data = array(
+	'rowid' => $this->input->post('row_id'),
+	'qty' => $this->input->post('quantity')
+);
 
+// var_dump($data);
+// die();
+	$this->cart->update($data);
+	redirect('/welcome/cart');
 }
 
-public function remove_from_cart()
+public function remove_item($rowid)
 {
+	$data = array(
+	'rowid' => $rowid,
+	'qty' => 0
+	);
 
+
+	$this->cart->update($data);
+	redirect('/welcome/cart');
 }
 public function load_cart()
 {

@@ -26,12 +26,46 @@ class Products extends CI_Controller
 		//May also interact with Users Controller Welcome method?
 		$products = $this->Product->get_all_products();
 		$view_data['products'] = $products;
-		//var_dump($products);
-		//die("MAIN PROD PAGE");
 		$this->load->view('shoes', $view_data);
 
 	}
 
+	public function mens_products(){
+		$products = $this->Product->get_mens_products();
+		$view_data['products'] = $products;
+		$this->load->view('mens_shoes', $view_data);
+	}
+	public function womens_products(){
+		$products = $this->Product->get_womens_products();
+		$view_data['products'] = $products;
+		$this->load->view('womens_shoes', $view_data);
+	}
+
+	public function boys_products(){
+		$products = $this->Product->get_boys_products();
+		$view_data['products'] = $products;
+		//var_dump($products);
+		//die("MAIN PROD PAGE");
+		$this->load->view('boys_shoes', $view_data);
+	}
+	public function girls_products(){
+		$products = $this->Product->get_girls_products();
+		$view_data['products'] = $products;
+		//var_dump($products);
+		//die("MAIN PROD PAGE");
+		$this->load->view('girls_shoes', $view_data);
+	}
+
+	// public function get_mens_category(){
+	// 	COME BACK TO AFTER TURNING SHIT ON.
+	// 	$this->load->view('')
+	// }
+
+public function edit_cart()
+{
+	$this->cart->update();
+	redirect('/welcome/cart');
+}
 	public function index_mens()
 	{
 		//will load all men's shoes

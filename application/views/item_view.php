@@ -82,12 +82,17 @@
             <div class="col-md-6">
                 <img class="img-responsive" src="/assets/images/<?= $product_info['id'] ?>.png" alt="">
             </div>
+
             <div class="col-md-6">
                 <h2><?= $product_info['name']?></h2>
                 <p><?= $product_info['category']?></p>
                 <p><?= $product_info['price']?></p>
                 <p><?= $product_info['description']?></p>
-                <form>
+                <form action = "/users/add_to_cart" method = "post">
+                  <input type = "hidden" name ="product_id" value = "<?= $product_info['id'] ?>">
+                  <input type = "hidden" name ="price" value = "<?= $product_info['price'] ?>">
+                  <input type = "hidden" name ="product_name" value = "<?= $product_info['name'] ?>">
+                  <input type = "hidden" name ="brand" value = "<?= $product_info['brand'] ?>">
                     <p>
                         <select name="size">
                             <option selected="selected">Size</option>
@@ -103,7 +108,7 @@
                             <option>11.5</option>
                             <option>12</option>
                         </select>
-                        <select>
+                        <select name = "quantity">
                             <option selected="selected">QTY</option>
                             <option>1</option>
                             <option>2</option>
