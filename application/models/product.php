@@ -18,6 +18,13 @@ public function get_all_products()
 	return $this->db->query("SELECT * FROM products")->result_array();
 }
 
+public function get_by_gen_cat($gen, $cat)
+{
+	$query = "SELECT * FROM products WHERE gender = ? AND category = ?";
+	$values = array($gen, $cat);
+	return $this->db->query($query, $values)->result_array();
+}
+
 public function get_mens_products()
 {
 	//will be used to select all men's products.

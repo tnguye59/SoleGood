@@ -61,6 +61,78 @@ class Products extends CI_Controller
 	// 	$this->load->view('')
 	// }
 
+
+	public function dress_mens_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('mens', 'dress');
+		$this->load->view('/partials/dress_mens', $view_data);
+	}
+
+	public function dress_womens_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('womens', 'dress');
+		$this->load->view('/partials/dress_womens', $view_data);
+	}
+
+	public function dress_boys_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('boys', 'dress');
+		$this->load->view('/partials/dress_boys', $view_data);
+	}
+
+	public function dress_girls_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('girls', 'dress');
+		$this->load->view('/partials/dress_girls', $view_data);
+	}
+
+	public function casual_mens_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('mens', 'casual');
+		$this->load->view('/partials/casual_mens', $view_data);
+	}
+
+	public function casual_womens_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('womens', 'casual');
+		$this->load->view('/partials/casual_womens', $view_data);
+	}
+
+	public function casual_boys_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('boys', 'casual');
+		$this->load->view('/partials/casual_boys', $view_data);
+	}
+
+	public function casual_girls_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('girls', 'casual');
+		$this->load->view('/partials/casual_girls', $view_data);
+	}
+
+	public function sports_mens_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('mens', 'sport');
+		$this->load->view('/partials/sports_mens', $view_data);
+	}
+
+	public function sports_womens_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('womens', 'sport');
+		$this->load->view('/partials/sports_womens', $view_data);
+	}
+
+	public function sports_boys_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('boys', 'sport');
+		$this->load->view('/partials/sports_boys', $view_data);
+	}
+
+	public function sports_girls_html()
+	{
+		$view_data['products'] = $this->Product->get_by_gen_cat('girls', 'sport');
+		$this->load->view('/partials/sports_girls', $view_data);
+	}
 public function edit_cart()
 {
 	$this->cart->update();
