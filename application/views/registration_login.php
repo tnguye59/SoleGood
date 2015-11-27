@@ -53,6 +53,7 @@
 	                        		<div class="form-top-left">
 	                        			<h3>Login to our site</h3>
 	                            		<p>Enter email and password to log on:</p>
+                                         <?= $this->session->flashdata("login_error"); ?>
 	                        		</div>
 	                        		<div class="form-top-right">
 	                        			<i class="fa fa-lock"></i>
@@ -100,6 +101,7 @@
 	                        		<div class="form-top-left">
 	                        			<h3>Sign up now</h3>
 	                            		<p>Fill in the form below to get full access:</p>
+                                        <?= $this->session->flashdata("errors"); ?>
 	                        		</div>
 	                        		<div class="form-top-right">
 	                        			<i class="fa fa-pencil"></i>

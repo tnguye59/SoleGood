@@ -24,15 +24,15 @@ public function __construct()
 
 public function register()
 {
-	$this->form_validation->set_rules('first_name', "First Name", 'required');
-	$this->form_validation->set_rules('last_name', "Last Name", 'required');
-	$this->form_validation->set_rules('email', "Email", 'required');
-	$this->form_validation->set_rules('password', "Password", 'required');
-	$this->form_validation->set_rules('confirm_password', "Confirm Password", 'required');
+	$this->form_validation->set_rules('first_name', "First Name", 'trim|required');
+	$this->form_validation->set_rules('last_name', "Last Name", 'trim|required');
+	$this->form_validation->set_rules('email', "Email", 'required|valid_email|is_unique[users.email]');
+	$this->form_validation->set_rules('password', "Password", 'required|min_length[8]|matches[confirm_password]');
+	$this->form_validation->set_rules('confirm_password', "Confirm Password", 'required|min_length[8]');
 	if($this->form_validation->run() == FALSE)
 	{
 		$this->session->set_flashdata('errors', validation_errors());
-		redirect('/');
+		redirect('/users');
 	}
 	else
 	{
@@ -48,9 +48,18 @@ public function register()
 
 public function login()
 {
+	$this->form_validation->set_rules('email', "Email", 'required|valid_email');
+	$this->form_validation->set_rules('password', "Password", 'required|min_length[8]');
+	if($this->form_validation->run() == FALSE)
+	{
+		$this->session->set_flashdata('login_error', validation_errors());
+		redirect('/users');
+	}
 	$email = $this->input->post('email');
 	$password = $this->input->post('password');
 	$post = $this->input->post();
+	// var_dump($post);
+	// die();
 	$userData = $this->User->get_user_by_email($post);
 
 
@@ -60,6 +69,7 @@ public function login()
 			'id' => $userData['id'],
 			'name' => $userData['first_name'],
 			'email' => $userData['email'],
+			'is_admin' => $userData['is_admin'],
 			'is_logged_in' => true
 			);
 		$this->session->set_userdata('userInfo', $user);
@@ -68,7 +78,8 @@ public function login()
 	}
 	else
 	{
-		redirect('/');
+		$this->session->set_flashdata("login_error", "Invalid email or password!");
+		redirect('/users');
 	}
 }
 
