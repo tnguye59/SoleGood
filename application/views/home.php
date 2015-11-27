@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+  <style media="screen">
+    @font-face{
+      font-family: bop;
+      src: url('/assets/font-awesome/fonts/bop.ttf');
+    }
+    .logo{
+      color: white;
+      font-size: 2em;
+      font-family: bop;
+    }
+  </style>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Sole Good!</a>
+                <a class='logo' class="navbar-brand" href="/">Sole Good!</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -44,17 +55,20 @@
                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">SHOP NOW <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                          <li>
+                              <a href="/products/main_product_page">All Products</a>
+                          </li>
                             <li>
-                                <a href="portfolio-1-col.html">Men</a>
+                                <a href="/products/mens_products">Men</a>
                             </li>
                             <li>
-                                <a href="portfolio-2-col.html">Women</a>
+                                <a href="/products/womens_products">Women</a>
                             </li>
                             <li>
-                                <a href="portfolio-3-col.html">Boys</a>
+                                <a href="/products/boys_products">Boys</a>
                             </li>
                             <li>
-                                <a href="portfolio-4-col.html">Girls</a>
+                                <a href="/products/girls_products">Girls</a>
                             </li>
                         </ul>
                     </li>
@@ -77,6 +91,14 @@
                     <li>
                         <a href="/welcome/about">About</a>
                     </li>
+<?php
+                    if($this->session->userdata('userInfo')){
+?>
+                    <li>
+                      <a href="/users/logout">Logout</a>
+                    </li>
+<?php                 }
+?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

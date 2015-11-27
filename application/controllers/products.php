@@ -1,11 +1,11 @@
-<?php
+ <?php
 
 class Products extends CI_Controller
 {
 	public function __construct()
 	{
 		parent::__construct();
-			$this->output->enable_profiler(TRUE);
+		$this->output->enable_profiler(TRUE);
 		$this->load->model('Product');
 	}
 	public function product_view($id)
@@ -138,33 +138,7 @@ public function edit_cart()
 	$this->cart->update();
 	redirect('/welcome/cart');
 }
-	public function index_mens()
-	{
-		//will load all men's shoes
-		//will communicate with Product Model method get_mens_products().
-		//loads partials
-	}
 
-	public function index_womens()
-	{
-		//will load all women's shoes
-		//will communicate with Product Model method get_womens_products().
-		//loads partials
-	}
-
-	public function index_boys()
-	{
-		//will load all boys's shoes
-		//will communicate with Product Model method get_boys_products().
-		//loads partials
-	}
-
-	public function index_girls()
-	{
-		//will load all girls's shoes
-		//will communicate with Product Model method get_girls_products().
-		//loads partials
-	}
 
 	public function add_product()
 	{
@@ -200,9 +174,3 @@ public function edit_cart()
 		// redirect('/');
 	}
 }
-
-
-
-
-
-?>
