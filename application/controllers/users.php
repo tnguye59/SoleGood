@@ -87,8 +87,8 @@ public function logout()
 }
 public function dashboard($userid)
 {
-	//$orders=$this->Order->get_orders_by_id($userid);
-	//$this->load->view('user_dashboard', array('orders'=>$orders));
+	// $orders=$this->Order->get_orders_by_id($userid);
+	$this->load->view('dashboard');//, array('orders'=>$orders));
 }
 public function add_to_cart()
 {
