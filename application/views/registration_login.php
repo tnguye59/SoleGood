@@ -15,23 +15,65 @@
 		<link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-
     </head>
 
     <body>
+
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class='logo' class="navbar-brand" href="/">Sole Good!</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                   <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">SHOP NOW <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                              <a href="/products/main_product_page">All Products</a>
+                          </li>
+                            <li>
+                                <a href="/products/mens_products">Men</a>
+                            </li>
+                            <li>
+                                <a href="/products/womens_products">Women</a>
+                            </li>
+                            <li>
+                                <a href="/products/boys_products">Boys</a>
+                            </li>
+                            <li>
+                                <a href="/products/girls_products">Girls</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/welcome/cart">Cart</a>
+                    </li>
+                    <li>
+                        <a href="/welcome/about">About</a>
+                    </li>
+<?php
+                    if($this->session->userdata('userInfo')){
+?>
+                    <li>
+                      <a href="/users/logout">Logout</a>
+                    </li>
+<?php                 }
+?>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
         <!-- Top content -->
         <div class="top-content">
@@ -72,23 +114,7 @@
 				                        <button type="submit" class="btn">Sign in!</button>
 				                    </form>
 			                    </div>
-		                    </div>
-		                
-		                	<div class="social-login">
-	                        	<h3>...or login with:</h3>
-	                        	<div class="social-login-buttons">
-		                        	<a class="btn btn-link-2" href="#">
-		                        		<i class="fa fa-facebook"></i> Facebook
-		                        	</a>
-		                        	<a class="btn btn-link-2" href="#">
-		                        		<i class="fa fa-twitter"></i> Twitter
-		                        	</a>
-		                        	<a class="btn btn-link-2" href="#">
-		                        		<i class="fa fa-google-plus"></i> Google Plus
-		                        	</a>
-	                        	</div>
-	                        </div>
-	                        
+		                    </div>              
                         </div>
                         
                         <div class="col-sm-1 middle-border"></div>
