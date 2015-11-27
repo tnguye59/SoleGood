@@ -147,9 +147,10 @@
             <!-- Sidebar Column -->
             <div class="col-md-3">
                 <div class="list-group">
-                  <a id='sport' href="#" class="list-group-item">Sport</a>
-                  <a id='casual'href="#" class="list-group-item">Casual</a>
-                  <a id='dress' href="#" class="list-group-item">Dress</a>
+                  <a id='sport' href="/products/mens_products" class="list-group-item">Men</a>
+                  <a id='casual'href="/products/womens_products" class="list-group-item">Women</a>
+                  <a id='dress' href="/products/boys_products" class="list-group-item">Boys</a>
+                  <a id='dress' href="/products/girls_products" class="list-group-item">Girls</a>
                 </div>
             </div>
             <!-- Content Column -->
