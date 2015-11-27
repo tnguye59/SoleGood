@@ -1,118 +1,165 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Log In or Register</title>
-	<link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
-	<STYLE TYPE="text/css">
-	.well
-	{
-		height: 500px;
-	}
+<!DOCTYPE html>
+<html lang="en">
 
-	</STYLE>
-</head>
-<body>
+    <head>
 
-<div class="" id="loginModal">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		<h3>Have an Account?</h3>
-	</div>
-	<div class="modal-body">
-		<div class="well">
-			<ul class="nav nav-tabs">
-				<li class="active"><a href="#login" data-toggle="tab">Login</a></li>
-				<li><a href="#create" data-toggle="tab">Create Account</a></li>
-			</ul>
-			<div id="myTabContent" class="tab-content">
-				<div class="tab-pane active in" id="login">
-					<form class="form-horizontal" action='/users/login' method="POST">
-						<fieldset>
-							<div id="legend">
-								<legend class="">Login</legend>
-							</div>
-							<div class="control-group">
-								<!-- Username -->
-								<label class="control-label"  for="email">Email</label>
-								<div class="controls">
-									<input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-								</div>
-							</div>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login or Register</title>
 
-							<div class="control-group">
-								<!-- Password-->
-								<label class="control-label" for="password">Password</label>
-								<div class="controls">
-									<input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-								</div>
-							</div>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
 
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-							<div class="control-group">
-								<!-- Button -->
-								<div class="controls">
-									<button class="btn btn-success">Login</button>
-								</div>
-							</div>
-						</fieldset>
-					</form>
-				</div>
-				<div class="tab-pane fade" id="create">
-					<form id="tab" action = "/users/register" method = "post">
-						<label>First Name</label>
-						<input type="text" name = "first_name" value="" class="input-xlarge">
-						<label>Last Name</label>
-						<input type="text" name = "last_name" value="" class="input-xlarge">
-						<label>Email</label>
-						<input type="text" name = "email" value="" class="input-xlarge">
-						<label>Password</label>
-						<input type="text" name = "password" value="" class="input-xlarge">
-						<label>Confirm Password</label>
-						<input type="text" name = "confirm_password" value="" class="input-xlarge">
-						<input class="btn btn-primary" type = 'submit' value = 'create account'>
-					</form>
-					<?php echo $this->session->flashdata('errors'); ?>
-				</div>
-				<div id="myTabContent" class="tab-content">
-				<div class="tab-pane active in" id="login">
-					<form class="form-horizontal" action='/users/login' method="POST">
-						<fieldset>
-							<div id="legend">
-								<legend class="">Admin</legend>
-							</div>
-							<div class="control-group">
-								<!-- Username -->
-								<label class="control-label"  for="email">Email</label>
-								<div class="controls">
-									<input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-								</div>
-							</div>
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-							<div class="control-group">
-								<!-- Password-->
-								<label class="control-label" for="password">Password</label>
-								<div class="controls">
-									<input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-								</div>
-							</div>
+    </head>
 
+    <body>
 
-							<div class="control-group">
-								<!-- Button -->
-								<div class="controls">
-									<button class="btn btn-success">Login</button>
-								</div>
-							</div>
-						</fieldset>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                	
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Login &amp; Register</strong></h1>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Login to our site</h3>
+	                            		<p>Enter email and password to log on:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-lock"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form role="form" action="/users/login" method="post" class="login-form">
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-username">Email</label>
+				                        	<input type="text" name="email" placeholder="Email..." class="form-username form-control" id="form-username">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-password">Password</label>
+				                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
+				                        </div>
+				                        <button type="submit" class="btn">Sign in!</button>
+				                    </form>
+			                    </div>
+		                    </div>
+		                
+		                	<div class="social-login">
+	                        	<h3>...or login with:</h3>
+	                        	<div class="social-login-buttons">
+		                        	<a class="btn btn-link-2" href="#">
+		                        		<i class="fa fa-facebook"></i> Facebook
+		                        	</a>
+		                        	<a class="btn btn-link-2" href="#">
+		                        		<i class="fa fa-twitter"></i> Twitter
+		                        	</a>
+		                        	<a class="btn btn-link-2" href="#">
+		                        		<i class="fa fa-google-plus"></i> Google Plus
+		                        	</a>
+	                        	</div>
+	                        </div>
+	                        
+                        </div>
+                        
+                        <div class="col-sm-1 middle-border"></div>
+                        <div class="col-sm-1"></div>
+                        	
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+                        		<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Sign up now</h3>
+	                            		<p>Fill in the form below to get full access:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-pencil"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form role="form" action="/users/register" method="post" class="registration-form">
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-first-name">First name</label>
+				                        	<input type="text" name="first_name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-last-name">Last name</label>
+				                        	<input type="text" name="last_name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-email">Email</label>
+				                        	<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-email">Password</label>
+                                            <input type="password" name="password" placeholder="Password..." class="form-email form-control" id="form-email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-email">Confirm Password</label>
+                                            <input type="password" name="confirm_password" placeholder="Confirm Password..." class="form-email form-control" id="form-email">
+                                        </div>
+				                        
+				                        <button type="submit" class="btn">Sign me up!</button>
+				                    </form>
+			                    </div>
+                        	</div>
+                        	
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
 
-<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-</body>
+        <!-- Footer -->
+        <footer>
+        	<div class="container">
+        		<div class="row">
+        			
+        		</div>
+        	</div>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
 </html>
