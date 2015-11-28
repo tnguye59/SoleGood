@@ -12,6 +12,19 @@
       font-size: 2em;
       font-family: bop;
     }
+    .toppick
+    {
+        width: 320px;
+        height: 200px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .img-responsive img-portfolio
+    {
+        width: 320px;
+        height: 200;
+    }
+    
   </style>
 
     <meta charset="utf-8">
@@ -107,32 +120,46 @@
     </nav>
 
     <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
+     <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+             <li data-target="#myCarousel" data-slide-to="3"></li>
+             <li data-target="#myCarousel" data-slide-to="4"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="fill" style="background-image:url('/assets/img/vans.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 1</h2>
+                  <!--   <h2>Caption 1</h2> -->
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="fill" style="background-image:url('/assets/img/jordan.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 2</h2>
+                    <!-- <h2>Caption 2</h2> -->
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('/assets/img/converse.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 3</h2>
+                   <!--  <h2>Caption 3</h2> -->
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('/assets/img/nike.jpg');"></div>
+                <div class="carousel-caption">
+                    <!-- <h2>Caption 3</h2> -->
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('/assets/img/red.jpg');"></div>
+                <div class="carousel-caption">
+                    <!-- <h2>Caption 3</h2> -->
                 </div>
             </div>
         </div>
@@ -159,22 +186,24 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> MEN</h4>
+                        <h4><i class="fa fa-fw fa-check"></i>MEN</h4>
                     </div>
                     <div class="panel-body">
-                        <p>DESCRIPTION MEN'S SHOES</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
+                        <h5>High Nike Roshe Suede Black Blue Running Shoes</h5>
+                        <img class="toppick" src="/assets/img/nikeroshe.jpg">
+                        <a href="/products/mens_products" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i> WOMEN</h4>
+                        <h4><i class="fa fa-fw fa-gift"></i>WOMEN</h4>
                     </div>
                     <div class="panel-body">
-                        <p>DESCRIPTION WOMEN'S SHOES</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
+                        <h5>Michael Antonio Tochi Black Satin Rep Pu</h5>
+                        <img class="toppick" src="/assets/img/womentoppick.jpg">
+                        <a href="/products/womens_products" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -184,8 +213,9 @@
                         <h4><i class="fa fa-fw fa-compass"></i>KIDS</h4>
                     </div>
                     <div class="panel-body">
-                        <p>DESCRIPTION KID'S SHOES</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
+                        <H5>Baby Shoes Rose Baby Prewalker Flowers</H5>
+                        <img class="toppick" src="/assets/img/kidtoppick.jpg">
+                        <a href="/products/girls_products" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -193,40 +223,60 @@
         <!-- /.row -->
 
         <!-- Portfolio Section -->
-        <div class="row">
+        <div class="row" class="newrelease">
             <div class="col-lg-12">
-                <h2 class="page-header">TOP STYLE</h2>
+                <h2 class="page-header">NEW RELEASE</h2>
             </div>
             <div class="col-md-4 col-sm-6">
+                <a href="/products/product_view/1">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/1.png" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="/products/product_view/35">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/35.png" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="/products/product_view/25">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/25.png" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="/products/product_view/3">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/3.png" alt="">
+                </a>
+            </div>
+                 <div class="col-md-4 col-sm-6">
+                <a href="/products/product_view/10">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/10.png" alt="">
+                </a>
+            </div>
+                 <div class="col-md-4 col-sm-6">
+                <a href="/products/product_view/14">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/14.png" alt="">
+                </a>
+            </div>
+           <!--  <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/img/newrelease3.jpg" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/img/newrelease4.jpg" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/img/newrelease5.jpg" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/img/newrelease6.jpg" alt="">
                 </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
+            </div> -->
         </div>
         <!-- Footer -->
         <footer>
