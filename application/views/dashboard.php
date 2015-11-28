@@ -1,3 +1,10 @@
+<?php
+    
+    $userData = $this->session->userdata('userInfo');
+    
+
+   // if($userData['is_admin'] == true)
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,12 +74,18 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Welcome Name to your Dashboard
-                    <small>Subheading</small>
+                <h1 class="page-header">Welcome <?= $userData['name']; ?>, to your Dashboard
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Add Products</a></li>
-                    <li class="active"><a href="index.html">Edit Products</li>
+                    <?php
+                    if($userData['is_admin'] == 'true'){
+                    ?>
+                    <li><a href="/products/addnew">Add Products</a></li>
+                    <li class="active"><a href="/products/editinfo">Edit Products</li>
+                  <?php  
+                    }
+                    ?>
+
                 </ol>
             </div>
         </div>
@@ -90,25 +103,21 @@
                             <td>Created_at</td>
                         </tr>
                     </thead>
-                        <tr>
-                            <td>ID</td>
-                            <td>Quantity</td>
-                            <td>Total Price</td>
-                            <td>Created_at</td>
-                        </tr>
-                        <tr>
-                            <td>ID</td>
-                            <td>Quantity</td>
-                            <td>Total Price</td>
-                            <td>Created_at</td>
-                        </tr>
-                        <tr>
-                            <td>ID</td>
-                            <td>Quantity</td>
-                            <td>Total Price</td>
-                            <td>Created_at</td>
-                        </tr>
+                     
                     <tbody>
+<?php
+                        foreach($orders as $order)
+                        {                            
+?>
+                         <tr>
+                            <td><?= $order['id']; ?></td>
+                            <td><?= $order['quantity']; ?></td>
+                            <td><?= $order['total_price']; ?></td>
+                            <td><?= $order['created_at']; ?></td>
+                        </tr>
+ <?php                       
+                    };
+?>
                     </tbody>
                 </table>
             </div>

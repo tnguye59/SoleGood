@@ -1,4 +1,5 @@
- <?php
+<?php
+
 
 class Products extends CI_Controller
 {
@@ -140,21 +141,39 @@ public function edit_cart()
 }
 
 
+public function addnew()
+{
+	$this->load->view('add_product');
+}
+
+public function editinfo()
+{
+	$products = $this->Product->get_all_products();
+	$view_data['products'] = $products;
+	$this->load->view('edit_product', $view_data);
+}
+	
 	public function add_product()
 	{
 		//will only be available if user is admin.
 		//links for these methods will appear in view page if admin
 		//should load a view page with form to add product.
-		//$product = array(
-		//	   'category' =>$this->input->post('category'),
-		//     'name' => $this->input->post('product_name'),
-		//     'description' => $this->input->post('product_description')
-		//	   'price' => $this->input->post('product_price'),
-		// 	   'quantity' => $this->input->post('quantity'),
-		//	   'gender' => $this->input->post('gender'),
-		//	);
-		//$this->Product->add_new_product($post);
-		//redirect('/');
+		// var_dump($this->input->post());
+		// die('in add_product');
+		$product = array(
+			   'category' =>$this->input->post('category'),
+			   'brand' =>$this->input->post('brand'),
+			   'name' => $this->input->post('name'),
+			   'description' => $this->input->post('description'),
+			   'price' => $this->input->post('price'),
+			   'gender' => $this->input->post('gender'),
+			);
+		// var_dump($product);
+		// die('in add_product');
+
+		$this->Product->add_new_product($product);
+		// die('in add_product');
+		redirect('/users/dashboard');
 	}
 
 	public function edit_product($id)
@@ -162,15 +181,24 @@ public function edit_cart()
 		//will only be available if user is admin.
 		//links for this method will appear in view page if admin.
 		//should load a view page with form to update product information.
-		//$product = array(
-		//	   'category' =>$this->input->post('category'),
-		//     'name' => $this->input->post('product_name'),
-		//     'description' => $this->input->post('product_description')
-		//	   'price' => $this->input->post('product_price'),
-		// 	   'quantity' => $this->input->post('quantity'),
-		//	   'gender' => $this->input->post('gender'),
-		//	);
-		// $this->Product->updated_product_info($product, $id);
-		// redirect('/');
+		$product_info = $this->Product->get_product_by_id($id);
+		$view_data['product_info'] = $product_info;
+		$this->load->view('edit_view', $view_data);
+	}
+	public function update_product_info($id)
+	{
+
+		$this->load->model('Product');
+		$product = array(
+			'brand'=>$this->input->post('brand'),
+			'category'=>$this->input->post('category'),
+			'name' => $this->input->post('name'),
+			'description' => $this->input->post('description'),
+			'price' => $this->input->post('price'),			
+			);
+		// var_dump($product);
+		// die('in update');
+		$this->Product->update_product_info($product, $id);
+		redirect("/users/dashboard");
 	}
 }

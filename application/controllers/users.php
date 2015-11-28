@@ -69,7 +69,11 @@ public function login()
 			'id' => $userData['id'],
 			'name' => $userData['first_name'],
 			'email' => $userData['email'],
+<<<<<<< HEAD
 			'is_admin' => $userData['is_admin'],
+=======
+			'is_admin'=>$userData['is_admin'],
+>>>>>>> working
 			'is_logged_in' => true
 			);
 		$this->session->set_userdata('userInfo', $user);
@@ -96,10 +100,15 @@ public function logout()
 	$this->session->sess_destroy();
 	redirect('/');
 }
-public function dashboard($userid)
+public function dashboard()
 {
-	// $orders=$this->Order->get_orders_by_id($userid);
-	$this->load->view('dashboard');//, array('orders'=>$orders));
+	// var_dump($this->session->userdata('userInfo'));
+	$userData = $this->session->userdata('userInfo');
+	$id = $userData['id'];
+	// var_dump($id);
+	// die('in dash');
+	$orders=$this->Order->get_all_orders_by_user_id($id);
+	$this->load->view('dashboard', array('orders'=>$orders));
 }
 public function add_to_cart()
 {

@@ -18,10 +18,11 @@
 										<option value = "Casual">Casual</option>
 										<option value = "Sports">Sports</option>
 								   </select>
+		   <label>Brand:</label><input type = "text" name = "brand">
 		    <label>Name:</label><input type = "text" name = "name">
 		    <label>Description:</label><input type = "text" name = "description">
 		    <label>Price:</label><input type = "text" name = "price">
-		    <label>Quantity:</label><input type = "text" name = "quantity">
+		    
 		    <label>Gender:</label><select name = "gender">
 		    							<option value = "mens">Men's</option>
 		    							<option value = "womens">Women's</option>
