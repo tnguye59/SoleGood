@@ -198,7 +198,7 @@ public function editinfo()
 			);
 		// var_dump($product);
 		// die('in update');
-		$this->Product->update_product_info($product, $id);
+		$this->Product->updated_product_info($product, $id);
 		redirect("/users/dashboard");
 	}
 }
