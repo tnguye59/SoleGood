@@ -124,20 +124,35 @@ public function dashboard()
 }
 public function add_to_cart()
 {
+	//check if item already exists!
+	foreach($this->cart->contents() as $item){
+		//UNIQUE IDENTIFIERS ARE:
+		//ID AND SIZE
+		if($this->input->post('product_id') == $item['id']
+				&& $this->input->post('size') == $item['options']['size'] ){
+			//item already in cart!
+			//update the quantity!
+			$data = array(
+					'id' => $this->input->post('product_id'),
+					'qty' => $item['qty'] + $this->input->post('quantity'),
+					'price' =>$this->input->post('price'),
+					'name' =>$this->input->post('product_name'),
+					'options' => array('size' => $this->input->post('size'), 'brand' => $this->input->post('brand') )
+				);
+				$this->cart->insert($data);
+				redirect('/welcome/cart');
+		}
+	}
 	$data = array(
 			'id' => $this->input->post('product_id'),
 			'qty' =>$this->input->post('quantity'),
 			'price' =>$this->input->post('price'),
 			'name' =>$this->input->post('product_name'),
 			'options' => array('size' => $this->input->post('size'), 'brand' => $this->input->post('brand') )
-			// 'brand' =>$this->input->post('brand')
-			// 'size' =>$this->input->post('size'),   //optional array inputs
 		);
 
 	$this->cart->insert($data);
 
-	// var_dump($this->cart->contents());
-	// die('contents');
 	redirect('/welcome/cart');
 
 }
@@ -151,8 +166,6 @@ public function edit_cart()
 	'qty' => $this->input->post('quantity')
 );
 
-// var_dump($data);
-// die();
 	$this->cart->update($data);
 	redirect('/welcome/cart');
 }

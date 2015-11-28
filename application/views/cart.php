@@ -1,10 +1,7 @@
-<?php
-$cart_
- ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Your Cart(item_count)</title>
+	<title>Your Cart (<?= $this->cart->total_items()?>)</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 <style type="text/css">
@@ -16,8 +13,6 @@ $cart_
 
 </head>
 <body>
-
-<?php var_dump($this->cart->contents()); ?>
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -95,13 +90,13 @@ $cart_
         <div class="col-sm-12 col-md-10 col-md-offset-1">
             <table class="table table-hover">
                 <thead>
-                  <h2>CHECK OUT</h2>
+                  <h2>Your Cart (<?= $this->cart->total_items()?>)</h2>
                     <tr>
                         <th>Product</th>
-                        <th>Quantity</th>
+                        <th></th>
                         <th class="text-center">Price</th>
                         <th class="text-center">Total</th>
-                        <th> </th>
+                        <th>Quantity</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -122,8 +117,8 @@ $cart_
                             </div>
                         </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <!-- <input type="email" class="form-control" id="exampleInputEmail1" value="<?= $item['qty'] ?>"> -->
-												<p class="form-control"><?= $item['qty'] ?></p>
+
+
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>$<?= $item['price'] ?></strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>$<?= $item['subtotal'] ?></strong></td>
@@ -133,7 +128,7 @@ $cart_
 														<input type="hidden" name="row_id" value="<?= $item['rowid']?>">
 
 														<button type="submit" class="btn btn-warning">
-		                            <span class="glyphicon glyphicon glyphicon-pencil"></span>Edit
+		                            <span class="glyphicon glyphicon glyphicon-pencil"></span>Update
 		                        </button>
 												</form>
                         <a href="/users/remove_item/<?= $item['rowid']?>"><button type="button" class="btn btn-danger">
@@ -144,13 +139,7 @@ $cart_
 									}
 ?>
 
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong></strong></h5></td>
-                    </tr>
+
                     <tr>
                         <td>   </td>
                         <td>   </td>
@@ -170,86 +159,23 @@ $cart_
                         <td>   </td>
                         <td>   </td>
                         <td>
-                        <button type="button" class="btn btn-default">
+                        <a href="/products/main_product_page"><button type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                        </button></td>
+                        </button></a></td>
                         <td>
-                        <button type="button" class="btn btn-success"<a href="/welcome/checkout"></a>>
+                        <a href="/orders/checkout_view"><button type="button" class="btn btn-success">
                             Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
+                        </button></a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-
-
-
-
-
     <!-- jQuery -->
     <script src="/assets/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/assets/js/bootstrap.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-     <div class="container">
-        <div class="navbar-header">
-           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-           <span class="sr-only">Toggle navigation</span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="/">SHOEOHOESHOHESO</a>
-        </div>
-
-     </div>
-  </nav>
-	<div id = "wrapper">
-		<div id = "header" class = "page-header">
-			<a id = "home" class = "links" href = "/welcome/shoes">< Continue Shopping</a>
-			<p>Your Cart(cart_count)</p>
-		</div>
-
-		<div id = "maincontent">
-    <div id="cart_contents">
-      <div class="product">
-        <p>foreach session cartdata
-        input data into hidden inputs</p>
-        <img src="http" alt="" />
-        <p>PRODUCT NAME</p>
-        <p>$PRICE</p>
-        <p>SIZE</p>
-        <p>QTY</p>
-        <a href="#"><button type='button' class='btn btn-danger'>REMOVE</button></a>
-        <a href="#"><button type='button' class='btn btn-warning'>EDIT</button></a>
-      </div>
-      <div class="product">
-        <img src="http" alt="" />
-        <p>PRODUCT NAME</p>
-        <p>$PRICE</p>
-        <p>SIZE</p>
-        <p>QTY</p>
-        <a href="#"><button type='button' class='btn btn-danger'>REMOVE</button></a>
-        <a href="#"><button type='button' class='btn btn-warning'>EDIT</button></a>
-      </div>
-      <h3>Total: $total</h3>
-      <a href="/orders/checkout_view"><button type='submit' class='btn btn-success'>CHECKOUT</button></a>
-    </div>
-	</div>
- -->
 </body>
 </html>
