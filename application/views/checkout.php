@@ -258,7 +258,7 @@
                                     data-key="pk_test_VAwheRPM3ZyjDTMlCkaWUrod"
                                     data-image="/img/documentation/checkout/marketplace.png"
                                     data-name="Sole Good"
-                                    data-amount="5000"
+                                    data-amount="<?= ($this->cart->total() * 100)?>"
                                     data-locale="auto">
                                   </script>
                                   <!-- <?php
