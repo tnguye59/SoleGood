@@ -1,7 +1,7 @@
 <?php
     
     $userData = $this->session->userdata('userInfo');
-    
+    // var_dump($orders);    
 
    // if($userData['is_admin'] == true)
 ?>
@@ -44,22 +44,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/welcome/shoes">Sole Good!</a>
+                <a class="navbar-brand" href="/">Sole Good!</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">Register/Login</a>
-                    </li>
-                    <li>
-                        <a href="services.html">Help</a>
-                    </li>
-                    <li>
-                        <a href="/welcome/checkout">Cart</a>
-                    </li>
-                    <li>
                         <a href="/welcome/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/welcome/cart">Cart</a>
                     </li>
                 </ul>
             </div>

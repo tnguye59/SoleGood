@@ -40,7 +40,21 @@ public function register()
 		// var_dump($userData);
 		// die('in register method');
 		$this->User->add_user($userData);
-		$this->session->set_userdata('userInfo', $userData);
+		$userData = $this->User->get_user_by_email($this->input->post());
+		// var_dump($userData);
+		// die('in register');
+		// $this->session->set_userdata('userInfo', $userData);
+		if($userData)
+		{
+			$user = array(
+				'id' => $userData['id'],
+				'name' => $userData['first_name'],
+				'email' => $userData['email'],
+				'is_admin' => $userData['is_admin'],
+				'is_logged_in' => true
+				);
+		}
+		$this->session->set_userdata('userInfo', $user);
 		redirect('/users/welcome');
 
 	}
@@ -69,7 +83,9 @@ public function login()
 			'id' => $userData['id'],
 			'name' => $userData['first_name'],
 			'email' => $userData['email'],
-			'is_admin'=>$userData['is_admin'],
+
+			'is_admin' => $userData['is_admin'],
+
 			'is_logged_in' => true
 			);
 		$this->session->set_userdata('userInfo', $user);
