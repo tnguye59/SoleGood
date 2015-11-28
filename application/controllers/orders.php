@@ -11,6 +11,7 @@ class Orders extends CI_Controller
         parent::__construct();
         $this->output->enable_profiler(TRUE);
         $this->load->model('Order');
+        $this->load->model('User');
         $this->load->library('form_validation');
 
     }
@@ -45,8 +46,6 @@ class Orders extends CI_Controller
       // }
       public function stripe_pay()
         {
-          var_dump($this->input->post());
-          die();
           $stripe_keys = array(
             "secret_key" => "sk_test_imZKswrXl9B2k5cqPBohh7tL",
             "publishable_key" => "pk_test_VAwheRPM3ZyjDTMlCkaWUrod"
@@ -56,17 +55,28 @@ class Orders extends CI_Controller
 
           $token = $this->input->post("stripeToken");
 
-          // if ($existing_customer) throw new Exception("That e-mail address already exists");
           // $customer = \Stripe\Customer::create(array(
-          //   'source'     => $_POST['stripeToken'],
-          //   'email'    => $_POST['stripeEmail']
-          //   ));
-
+          //   "source" => $token,
+          //   "id" => $this->session->userdata('userInfo')['id'],
+          //   "city"=>$this->input->post('city'),
+          //   "phone_number"=> $this->input->post('phone_number'),
+          //   "address"=> $this->input->post("address"),
+          //   "zip_code"=>$this->input->post("zip_code")
+          // ));
+          //
+          // var_dump($customer);
+          // die();
+          $user = $this->session->userdata('userInfo');
+          $this->User->add_customer_details($this->input->post(), $user['id']);
+          // //inserting to database
+          // $this->User->get_customer_details($customer);
+          // quering
           try {
             $charge = \Stripe\Charge::create(array(
               "amount" => 5000, // amount in cents, again
               "currency" => "usd",
               "source" => $token,
+              // "customer" => $customer->id,
               "description" => "Charging the user in the example"
               ));
           } catch(\Stripe\Error\Card $e) {
@@ -74,18 +84,24 @@ class Orders extends CI_Controller
           }
           redirect("/orders/checkout");
         }
-    // public function checkout()
-    // {
-    //   $products = $this->cart->contents();
-    //   $results = $this->input->post();
-    //
-    //   foreach ($products as $item)
-    //   {
-    //     $this->order->add_order($item, $results);
-    //   }
-    //   $this->session->session_destroy();
-    //   redirect('/orders/checkout_view');
-    // }
+    public function checkout()
+    {
+        $products = $this->cart->contents();
+        //var_dump($products);
+        //die('sdfoas');
+        $orderID = $this->Order->add_order($products);
+        foreach ($products as $product) {
+
+
+          $this->Order->add_ordproduct($orderID, $product);
+        }
+        //foreach item in the cart
+        //insert into product_has_orders table
+        //WITH the $orderID
+      // }
+      // $this->session->session_destroy();
+      redirect('/orders/checkout_view');
+    }
 
     public function confirmation($order_id)
     {
