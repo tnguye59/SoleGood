@@ -22,7 +22,53 @@
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
  	<link rel="stylesheet" type="text/css" href="/assets/css/checkoutpage.css">
-
+  <!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript" src="js/buy.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript">
+    // $(document).ready(function()) {
+    //   $("#payment-form").submit(function(event)) {
+    //     var $form = $(this);
+    //     $form.find('button').prop('disabled', true);
+		//     Stripe.card.createToken($form, stripeResponseHandler);
+    //   });
+    //   return false;
+    // });
+    // function stripeResponseHandler(status, response) {
+		//   var $form = $('#payment-form');
+		//   // console.log(response);
+		//   // console.log(status);
+		//   // return false;
+		//   if (response.error) {
+		//     // Show the errors on the form
+		//     $form.find('.payment-errors').text(response.error.message);
+		//     $form.find('button').prop('disabled', false);
+		//   } else {
+		//     // response contains id and card, which contains additional card details
+		//     var token = response.id;
+		//     // Insert the token into the form so it gets submitted to the server
+		//     $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+		//     // console.log(response);
+		//     // and submit
+		//     // return false;
+		//     $form.get(0).submit();
+		//   }
+    //   $(document).ready(function() {
+    //               $("#payment-form").submit(function(event) {
+    //                   // disable the submit button to prevent repeated clicks
+    //                   $('.submit-button').attr("disabled", "disabled");
+    //                   // createToken returns immediately - the supplied callback submits the form if there are no errors
+    //                   Stripe.createToken({
+    //                       number: $('.card-number').val(),
+    //                       cvc: $('.card-cvc').val(),
+    //                       exp_month: $('.card-expiry-month').val(),
+    //                       exp_year: $('.card-expiry-year').val()
+    //                   }, stripeResponseHandler);
+    //                   return false; // submit from callback
+    //               });
+		// };
+    //jquery attemp at stripe api
+  </script>
 </head>
 
 <body>
@@ -68,7 +114,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">CHECK OUT
-              
+
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
@@ -93,9 +139,9 @@
                     <p></p>
                 </div>
                 </div>
-            </div>    
+            </div>
             <div class="row cart-body">
-                <form class="form-horizontal" method="post" action="">
+                <form class="form-horizontal" method="post" action="/orders/stripe_pay" id="payment-form">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                     <!--REVIEW ORDER-->
                     <div class="panel panel-info">
@@ -103,18 +149,23 @@
                             Review Order <div class="pull-right"><small><a class="afix-1" href="#">Edit Cart</a></small></div>
                         </div>
                         <div class="panel-body">
+<?php
+										foreach($this->cart->contents() as $item)
+										{
+ ?>
                             <div class="form-group">
                                 <div class="col-sm-3 col-xs-3">
-                                    <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
+                                     <img class="media-object" src="/assets/images/<?= $item['id'] ?>.png">
                                 </div>
                                 <div class="col-sm-6 col-xs-6">
-                                    <div class="col-xs-12">Product name</div>
-                                    <div class="col-xs-12"><small>Quantity:<span>1</span></small></div>
+                                    <div class="col-xs-12"><?= $item['name'] ?></div>
+                                    <div class="col-xs-12"><small>Quantity:<span><?= $item['qty'] ?></span></small></div>
                                 </div>
                                 <div class="col-sm-3 col-xs-3 text-right">
-                                    <h6><span>$</span>25.00</h6>
+                                    <h6><span>$</span><?= $item['price'] ?></h6>
                                 </div>
                             </div>
+<?php } ?>
                             <div class="form-group"><hr /></div>
                             <div class="form-group">
                                 <div class="col-sm-3 col-xs-3">
@@ -225,94 +276,37 @@
                         </div>
                     </div>
                     <!--SHIPPING METHOD END-->
-                    <!--CREDIT CART PAYMENT-->
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div>
-                        <div class="panel-body">
                             <div class="form-group">
-                                <div class="col-md-12"><strong>Card Type:</strong></div>
-                                <div class="col-md-12">
-                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
-                                        <option value="5">Visa</option>
-                                        <option value="6">MasterCard</option>
-                                        <option value="7">American Express</option>
-                                        <option value="8">Discover</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>Credit Card Number:</strong></div>
-                                <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" /></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>Card CVV:</strong></div>
-                                <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" /></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <strong>Expiration Date</strong>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="">
-                                        <option value="">Month</option>
-                                        <option value="01">01</option>
-                                        <option value="02">02</option>
-                                        <option value="03">03</option>
-                                        <option value="04">04</option>
-                                        <option value="05">05</option>
-                                        <option value="06">06</option>
-                                        <option value="07">07</option>
-                                        <option value="08">08</option>
-                                        <option value="09">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                </select>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="">
-                                        <option value="">Year</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2025">2025</option>
-                                </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <span>Pay secure using your credit card.</span>
-                                </div>
-                                <div class="col-md-12">
-                                    <ul class="cards">
-                                        <li class="visa hand">Visa</li>
-                                        <li class="mastercard hand">MasterCard</li>
-                                        <li class="amex hand">Amex</li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
+                                 <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <script
+                            			  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                    data-key="pk_test_VAwheRPM3ZyjDTMlCkaWUrod"
+                                    data-image="/img/documentation/checkout/marketplace.png"
+                                    data-name="Sole Good"
+                                    data-amount="5000"
+                                    data-locale="auto">
+                                  </script>
+                                  <?php 	foreach ($this->cart->contents() as $item) { ?>
+                                			<input type='hidden' name='<?= "product_".$item['id']."_id"?>' value='<?= $item['id']?>'>
+                                			<input type='hidden' name='<?= "product_".$item['id']."_name"?>' value='<?= $item['name']?>'>
+                                			<input type='hidden' name='<?= "product_".$item['id']."_size"?>' value='<?= $item['size']?>'>
+                                			<input type='hidden' name='<?= "product_".$item['id']."_qty"?>' value='<?= $item['qty']?>'>
+                                			<input type='hidden' name='<?= "product_".$item['id']."_subtotal"?>' value='<?= $item['subtotal']?>'>
+                                <?php	}	?>
+                                			<input type='hidden' name='<?= "products_total"?>' value='<?= $this->session->userdata('cart_contents')['cart_total']?>'>
+                                    <!-- <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button> -->
+                                    <?= $this->session->flashdata("errors") ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!--CREDIT CART PAYMENT END-->
                 </div>
-                
+
                 </form>
             </div>
             <div class="row cart-footer">
-        
+
             </div>
     	</div>
 
