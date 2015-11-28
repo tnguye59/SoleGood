@@ -155,7 +155,7 @@
  ?>
                             <div class="form-group">
                                 <div class="col-sm-3 col-xs-3">
-                                     <img class="media-object" src="/assets/images/<?= $item['id'] ?>.png">
+                                     <img class="media-object" src="/assets/images/<?= $item['id'] ?>.png" style="width: 85px; height: 85px;>
                                 </div>
                                 <div class="col-sm-6 col-xs-6">
                                     <div class="col-xs-12"><?= $item['name'] ?></div>
@@ -166,48 +166,23 @@
                                 </div>
                             </div>
 <?php } ?>
-                            <div class="form-group"><hr /></div>
-                            <div class="form-group">
-                                <div class="col-sm-3 col-xs-3">
-                                    <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
-                                </div>
-                                <div class="col-sm-6 col-xs-6">
-                                    <div class="col-xs-12">Product name</div>
-                                    <div class="col-xs-12"><small>Quantity:<span>1</span></small></div>
-                                </div>
-                                <div class="col-sm-3 col-xs-3 text-right">
-                                    <h6><span>$</span>25.00</h6>
-                                </div>
-                            </div>
-                            <div class="form-group"><hr /></div>
-                            <div class="form-group">
-                                <div class="col-sm-3 col-xs-3">
-                                    <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
-                                </div>
-                                <div class="col-sm-6 col-xs-6">
-                                    <div class="col-xs-12">Product name</div>
-                                    <div class="col-xs-12"><small>Quantity:<span>2</span></small></div>
-                                </div>
-                                <div class="col-sm-3 col-xs-3 text-right">
-                                    <h6><span>$</span>50.00</h6>
-                                </div>
-                            </div>
+
                             <div class="form-group"><hr /></div>
                             <div class="form-group">
                                 <div class="col-xs-12">
-                                    <strong>Subtotal</strong>
-                                    <div class="pull-right"><span>$</span><span>200.00</span></div>
+                                    <strong></strong>
+                                    <div class="pull-right"><span></span><span></span></div>
                                 </div>
                                 <div class="col-xs-12">
                                     <small>Shipping</small>
-                                    <div class="pull-right"><span>-</span></div>
+                                    <div class="pull-right"><span>FREE SHIPPING SON</span></div>
                                 </div>
                             </div>
                             <div class="form-group"><hr /></div>
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <strong>Order Total</strong>
-                                    <div class="pull-right"><span>$</span><span>150.00</span></div>
+                                    <div class="pull-right"><span></span><span>$<?= $this->cart->total()?></span></div>
                                 </div>
                             </div>
                         </div>
@@ -286,13 +261,14 @@
                                     data-amount="5000"
                                     data-locale="auto">
                                   </script>
-                                  <?php 	foreach ($this->cart->contents() as $item) { ?>
+                                  <!-- <?php
+                                  foreach ($this->cart->contents() as $item) { ?>
                                 			<input type='hidden' name='<?= "product_".$item['id']."_id"?>' value='<?= $item['id']?>'>
                                 			<input type='hidden' name='<?= "product_".$item['id']."_name"?>' value='<?= $item['name']?>'>
-                                			<input type='hidden' name='<?= "product_".$item['id']."_size"?>' value='<?= $item['size']?>'>
+                                			<input type='hidden' name='<?= "product_".$item['id']."_size"?>' value='<?= $item['options']['size']?>'>
                                 			<input type='hidden' name='<?= "product_".$item['id']."_qty"?>' value='<?= $item['qty']?>'>
                                 			<input type='hidden' name='<?= "product_".$item['id']."_subtotal"?>' value='<?= $item['subtotal']?>'>
-                                <?php	}	?>
+                                <?php	}	?> -->
                                 			<input type='hidden' name='<?= "products_total"?>' value='<?= $this->session->userdata('cart_contents')['cart_total']?>'>
                                     <!-- <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button> -->
                                     <?= $this->session->flashdata("errors") ?>
