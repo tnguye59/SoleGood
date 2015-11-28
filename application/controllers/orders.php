@@ -45,8 +45,6 @@ class Orders extends CI_Controller
       // }
       public function stripe_pay()
         {
-          var_dump($this->input->post());
-          die();
           $stripe_keys = array(
             "secret_key" => "sk_test_imZKswrXl9B2k5cqPBohh7tL",
             "publishable_key" => "pk_test_VAwheRPM3ZyjDTMlCkaWUrod"

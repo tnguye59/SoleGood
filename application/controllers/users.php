@@ -69,11 +69,7 @@ public function login()
 			'id' => $userData['id'],
 			'name' => $userData['first_name'],
 			'email' => $userData['email'],
-<<<<<<< HEAD
-			'is_admin' => $userData['is_admin'],
-=======
 			'is_admin'=>$userData['is_admin'],
->>>>>>> working
 			'is_logged_in' => true
 			);
 		$this->session->set_userdata('userInfo', $user);
