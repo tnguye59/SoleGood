@@ -9,7 +9,7 @@ class Orders extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->output->enable_profiler(TRUE);
+        // $this->output->enable_profiler(TRUE);
         $this->load->model('Order');
         $this->load->model('User');
         $this->load->library('form_validation');
@@ -99,15 +99,16 @@ class Orders extends CI_Controller
         //insert into product_has_orders table
         //WITH the $orderID
       // }
-      // $this->session->session_destroy();
-      redirect('/orders/checkout_view');
+      $this->cart->destroy();
+      redirect('/orders/confirmation/'.$orderID);
     }
 
     public function confirmation($order_id)
     {
-        //$order_details = $this->Order->get_order_by_id($order_id);
-        //$view_data['order_details'];
-        //$this->load->view('confirmationpageorsomethingwhateveritsnameis', $view_data);
+        $view_data['order_details'] = $this->Order->get_order_by_id($order_id);
+        // var_dump($view_data);
+        // die('in confirmation');
+        $this->load->view('confirmation', $view_data);
     }
 
 }

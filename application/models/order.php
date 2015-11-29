@@ -30,9 +30,12 @@ class Order extends CI_Model
     }
       public function get_order_by_id($id)
     {
-      //$query =
-      //$values
-      //return $this->db->query($query, $values)->row_array();
+      $query = "SELECT * from orders 
+                LEFT JOIN customer_details on orders.user_id = customer_details.user_id
+                WHERE orders.id = ?
+                GROUP BY orders.user_id";
+      $values = array($id);
+      return $this->db->query($query, $values)->row_array();
     }
 }
 ?>

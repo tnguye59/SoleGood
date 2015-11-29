@@ -11,7 +11,7 @@ public function __construct()
 		$this->load->model('User'); //will need to load this model if users controller will hold user info AND register new users to DB.
 		$this->load->model('Order'); // will need to load in order to have user order history
 		$this->load->model('Product');
-		$this->output->enable_profiler(TRUE);
+		// $this->output->enable_profiler(TRUE);
 		$this->load->library('form_validation');
 		$this->load->library('cart');
 	}

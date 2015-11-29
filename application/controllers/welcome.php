@@ -22,7 +22,7 @@ class Welcome extends CI_Controller {
 	 		parent::__construct();
 			// $this->load->library('Cart');
 
-	 		$this->output->enable_profiler(TRUE);
+	 		// $this->output->enable_profiler(TRUE);
 
 	 	}
 	public function index()
