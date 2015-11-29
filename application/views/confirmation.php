@@ -81,16 +81,16 @@ $userData = $this->session->userdata('userInfo');
 ?>
                     </li>
                     <li>
-                        <a href="/welcome/cart">Cart</a>
+                        <a href="/welcome/cart">CART</a>
                     </li>
                     <li>
-                        <a href="/welcome/about">About</a>
+                        <a href="/welcome/about">ABOUT</a>
                     </li>
 <?php
                     if($this->session->userdata('userInfo')){
 ?>
                     <li>
-                      <a href="/users/logout">Logout</a>
+                      <a href="/users/logout">LOGOUT</a>
                     </li>
 <?php                 }
 ?>
@@ -100,7 +100,6 @@ $userData = $this->session->userdata('userInfo');
         </div>
         <!-- /.container -->
     </nav>
-
     <div id = "wrapper">
         <h3>Confirmation</h3>
         <p>Thank you for your order, <?= $userData['name']?>! Your order details are below.</p>
