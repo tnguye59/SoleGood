@@ -99,16 +99,16 @@
 ?>
                     </li>
                     <li>
-                        <a href="/welcome/cart">Cart</a>
+                        <a href="/welcome/cart">CART</a>
                     </li>
                     <li>
-                        <a href="/welcome/about">About</a>
+                        <a href="/welcome/about">ABOUT</a>
                     </li>
 <?php
                     if($this->session->userdata('userInfo')){
 ?>
                     <li>
-                      <a href="/users/logout">Logout</a>
+                      <a href="/users/logout">LOGOUT</a>
                     </li>
 <?php                 }
 ?>
@@ -233,13 +233,13 @@
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="/products/product_view/35">
-                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/35.png" alt="">
+                <a href="/products/product_view/7">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/7.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="/products/product_view/25">
-                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/25.png" alt="">
+                <a href="/products/product_view/8">
+                    <img class="img-responsive img-portfolio img-hover" src="/assets/images/8.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
@@ -257,26 +257,6 @@
                     <img class="img-responsive img-portfolio img-hover" src="/assets/images/14.png" alt="">
                 </a>
             </div>
-           <!--  <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="/assets/img/newrelease3.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="/assets/img/newrelease4.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="/assets/img/newrelease5.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="/assets/img/newrelease6.jpg" alt="">
-                </a>
-            </div> -->
         </div>
         <!-- Footer -->
         <footer>

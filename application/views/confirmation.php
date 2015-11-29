@@ -39,35 +39,64 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/welcome/shoes">Sole Good!</a>
+                <a class='logo' class="navbar-brand" href="/">Sole Good!</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="about.html">Register/Login</a>
+                   <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">SHOP NOW <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                              <a href="/products/main_product_page">All Products</a>
+                          </li>
+                            <li>
+                                <a href="/products/mens_products">Men</a>
+                            </li>
+                            <li>
+                                <a href="/products/womens_products">Women</a>
+                            </li>
+                            <li>
+                                <a href="/products/boys_products">Boys</a>
+                            </li>
+                            <li>
+                                <a href="/products/girls_products">Girls</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="services.html">Help</a>
+<?php
+                      if($this->session->userdata('userInfo')){
+?>
+
+                        <a href="/users/dashboard">DASHBOARD</a>
+<?php                 } else {
+
+?>
+                        <a href="/users">Register/Login</a>
+<?php                   }
+?>
                     </li>
                     <li>
-                        <a href="/welcome/checkout">Cart</a>
+                        <a href="/welcome/cart">CART</a>
                     </li>
                     <li>
-                        <a href="/welcome/about">About</a>
+                        <a href="/welcome/about">ABOUT</a>
                     </li>
+<?php
+                    if($this->session->userdata('userInfo')){
+?>
                     <li>
-                        <a href="/welcome/dashboard">About</a>
+                      <a href="/users/logout">LOGOUT</a>
                     </li>
+<?php                 }
+?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-    <div>
-        <a href="/products/product"><button>Continue Shopping!</button></a>
-    </div>
     <div id = "wrapper">
         <h3>Confirmation</h3>
         <p>Thank you for your order, (echo name)! Your order details are below.</p>
