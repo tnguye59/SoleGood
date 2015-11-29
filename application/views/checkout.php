@@ -22,53 +22,13 @@
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
  	<link rel="stylesheet" type="text/css" href="/assets/css/checkoutpage.css">
-  <!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-  <script type="text/javascript" src="js/buy.js"></script> -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script type="text/javascript">
-    // $(document).ready(function()) {
-    //   $("#payment-form").submit(function(event)) {
-    //     var $form = $(this);
-    //     $form.find('button').prop('disabled', true);
-		//     Stripe.card.createToken($form, stripeResponseHandler);
-    //   });
-    //   return false;
-    // });
-    // function stripeResponseHandler(status, response) {
-		//   var $form = $('#payment-form');
-		//   // console.log(response);
-		//   // console.log(status);
-		//   // return false;
-		//   if (response.error) {
-		//     // Show the errors on the form
-		//     $form.find('.payment-errors').text(response.error.message);
-		//     $form.find('button').prop('disabled', false);
-		//   } else {
-		//     // response contains id and card, which contains additional card details
-		//     var token = response.id;
-		//     // Insert the token into the form so it gets submitted to the server
-		//     $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-		//     // console.log(response);
-		//     // and submit
-		//     // return false;
-		//     $form.get(0).submit();
-		//   }
-    //   $(document).ready(function() {
-    //               $("#payment-form").submit(function(event) {
-    //                   // disable the submit button to prevent repeated clicks
-    //                   $('.submit-button').attr("disabled", "disabled");
-    //                   // createToken returns immediately - the supplied callback submits the form if there are no errors
-    //                   Stripe.createToken({
-    //                       number: $('.card-number').val(),
-    //                       cvc: $('.card-cvc').val(),
-    //                       exp_month: $('.card-expiry-month').val(),
-    //                       exp_year: $('.card-expiry-year').val()
-    //                   }, stripeResponseHandler);
-    //                   return false; // submit from callback
-    //               });
-		// };
-    //jquery attemp at stripe api
-  </script>
+  <style >
+    .error {
+      color:red;
+    }
+  </style>
 </head>
 
 <body>
@@ -190,7 +150,7 @@
  ?>
                             <div class="form-group">
                                 <div class="col-sm-3 col-xs-3">
-                                     <img class="media-object" src="/assets/images/<?= $item['id'] ?>.png" style="width: 85px; height: 85px;>
+                                     <img class="media-object" src="/assets/images/<?= $item['id'] ?>.png" style="width: 85px; height: 85px;">
                                 </div>
                                 <div class="col-sm-6 col-xs-6">
                                     <div class="col-xs-12"><?= $item['name'] ?></div>
@@ -306,7 +266,7 @@
                                 <?php	}	?> -->
                                 			<input type='hidden' name='<?= "products_total"?>' value='<?= $this->session->userdata('cart_contents')['cart_total']?>'>
                                     <!-- <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button> -->
-                                    <?= $this->session->flashdata("errors") ?>
+                                  <div class="error">  <?= $this->session->flashdata("errors") ?> </div>
                                 </div>
                             </div>
                         </div>

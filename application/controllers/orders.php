@@ -21,31 +21,24 @@ class Orders extends CI_Controller
         //loads checkout view with session[cart] data
         $this->load->view('checkout');
     }
-    // public function payment()
-    // {
-    //   $stripe_keys = array(
-    //       "secret_key" => "sk_test_imZKswrXl9B2k5cqPBohh7tL",
-    //       "publishable_key" => "pk_test_VAwheRPM3ZyjDTMlCkaWUrod"
-    //     );
-    //
-    //     \Stripe\Stripe::setApiKey($stripe_keys["secret_key"]);
-    //
-    //     $token = $this->input->post("stripeToken");
-    //
-    //     try {
-    //       $charge = \Stripe\Charge::create(array(
-    //         "amount" => 3000, // amount in cents, again
-    //         "currency" => "usd",
-    //         "source" => $token,
-    //         "description" => "Charging the user "
-    //         ));
-    //     } catch(\Stripe\Error\Card $e) {
-    //       $this->session->set_flashdata("errors", "Invalid Card. Please try again with another credit card");
-    //     }
-    //     redirect("/");
-      // }
+
       public function stripe_pay()
         {
+          $this->form_validation->set_rules('first_name', "First Name", 'trim|required');
+        	$this->form_validation->set_rules('last_name', "Last Name", 'trim|required');
+          $this->form_validation->set_rules('address', "Address", 'trim|required');
+        	$this->form_validation->set_rules('city', "City", 'trim|required');
+        	$this->form_validation->set_rules('email', "Email", 'required|valid_email');
+        	$this->form_validation->set_rules('state', "State", 'required|min_length[2]');
+        	$this->form_validation->set_rules('zip_code', "Zip Code", 'required|min_length[5]');
+          $this->form_validation->set_rules('country', "Country", 'trim|required');
+        	$this->form_validation->set_rules('phone_number', "Phone Number", 'trim|required');
+        	if($this->form_validation->run() == FALSE)
+        	{
+        		$this->session->set_flashdata('errors', validation_errors());
+        		redirect('/welcome/checkout');
+        	}
+
           $stripe_keys = array(
             "secret_key" => "sk_test_imZKswrXl9B2k5cqPBohh7tL",
             "publishable_key" => "pk_test_VAwheRPM3ZyjDTMlCkaWUrod"
@@ -87,18 +80,14 @@ class Orders extends CI_Controller
     public function checkout()
     {
         $products = $this->cart->contents();
-        //var_dump($products);
-        //die('sdfoas');
+
         $orderID = $this->Order->add_order($products);
         foreach ($products as $product) {
 
 
           $this->Order->add_ordproduct($orderID, $product);
         }
-        //foreach item in the cart
-        //insert into product_has_orders table
-        //WITH the $orderID
-      // }
+
       $this->cart->destroy();
       redirect('/orders/confirmation/'.$orderID);
     }
@@ -106,8 +95,7 @@ class Orders extends CI_Controller
     public function confirmation($order_id)
     {
         $view_data['order_details'] = $this->Order->get_order_by_id($order_id);
-        // var_dump($view_data);
-        // die('in confirmation');
+      
         $this->load->view('confirmation', $view_data);
     }
 
