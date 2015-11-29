@@ -28,7 +28,6 @@ class Orders extends CI_Controller
         	$this->form_validation->set_rules('last_name', "Last Name", 'trim|required');
           $this->form_validation->set_rules('address', "Address", 'trim|required');
         	$this->form_validation->set_rules('city', "City", 'trim|required');
-        	$this->form_validation->set_rules('email', "Email", 'required|valid_email');
         	$this->form_validation->set_rules('state', "State", 'required|min_length[2]');
         	$this->form_validation->set_rules('zip_code', "Zip Code", 'required|min_length[5]');
           $this->form_validation->set_rules('country', "Country", 'trim|required');
@@ -95,7 +94,7 @@ class Orders extends CI_Controller
     public function confirmation($order_id)
     {
         $view_data['order_details'] = $this->Order->get_order_by_id($order_id);
-      
+
         $this->load->view('confirmation', $view_data);
     }
 
