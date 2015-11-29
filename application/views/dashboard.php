@@ -1,7 +1,7 @@
 <?php
-    
+
     $userData = $this->session->userdata('userInfo');
-    // var_dump($orders);    
+    // var_dump($orders);
 
    // if($userData['is_admin'] == true)
 ?>
@@ -117,7 +117,7 @@
                     ?>
                     <li><a href="/products/addnew">Add Products</a></li>
                     <li class="active"><a href="/products/editinfo">Edit Products</li>
-                  <?php  
+                  <?php
                     }
                     ?>
 
@@ -129,7 +129,7 @@
         <!-- Content Row -->
         <div class="row">
             <div class="col-lg-12">
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
                             <td>ID</td>
@@ -138,11 +138,11 @@
                             <td>Created_at</td>
                         </tr>
                     </thead>
-                     
+
                     <tbody>
 <?php
                         foreach($orders as $order)
-                        {                            
+                        {
 ?>
                          <tr>
                             <td><?= $order['id']; ?></td>
@@ -150,7 +150,7 @@
                             <td><?= $order['total_price']; ?></td>
                             <td><?= $order['created_at']; ?></td>
                         </tr>
- <?php                       
+ <?php
                     };
 ?>
                     </tbody>
