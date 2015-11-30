@@ -21,6 +21,15 @@
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
    <style type="text/css">
+   @font-face{
+     font-family: bop;
+     src: url('/assets/font-awesome/fonts/bop.ttf');
+   }
+   .logo{
+     color: white;
+     font-size: 2em;
+     font-family: bop;
+   }
     .sidebar
     {
         height: 500px;

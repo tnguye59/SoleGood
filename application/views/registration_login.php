@@ -7,6 +7,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Login or Register</title>
+        <style media="screen">
+        @font-face{
+          font-family: bop;
+          src: url('/assets/font-awesome/fonts/bop.ttf');
+        }
+        .logo{
+          color: white;
+          font-size: 2em;
+          font-family: bop;
+        }
+        </style>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -77,19 +88,19 @@
 
         <!-- Top content -->
         <div class="top-content">
-        	
+
             <div class="inner-bg">
                 <div class="container">
-                	
+
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
                             <h1><strong>Login &amp; Register</strong></h1>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-sm-5">
-                        	
+
                         	<div class="form-box">
 	                        	<div class="form-top">
 	                        		<div class="form-top-left">
@@ -114,14 +125,14 @@
 				                        <button type="submit" class="btn">Sign in!</button>
 				                    </form>
 			                    </div>
-		                    </div>              
+		                    </div>
                         </div>
-                        
+
                         <div class="col-sm-1 middle-border"></div>
                         <div class="col-sm-1"></div>
-                        	
+
                         <div class="col-sm-5">
-                        	
+
                         	<div class="form-box">
                         		<div class="form-top">
 	                        		<div class="form-top-left">
@@ -155,25 +166,25 @@
                                             <label class="sr-only" for="form-email">Confirm Password</label>
                                             <input type="password" name="confirm_password" placeholder="Confirm Password..." class="form-email form-control" id="form-email">
                                         </div>
-				                        
+
 				                        <button type="submit" class="btn">Sign me up!</button>
 				                    </form>
 			                    </div>
                         	</div>
-                        	
+
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-            
+
         </div>
 
         <!-- Footer -->
         <footer>
         	<div class="container">
         		<div class="row">
-        			
+
         		</div>
         	</div>
         </footer>
@@ -183,7 +194,7 @@
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/scripts.js"></script>
-        
+
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->

@@ -28,6 +28,15 @@
     .error {
       color:red;
     }
+    @font-face{
+      font-family: bop;
+      src: url('/assets/font-awesome/fonts/bop.ttf');
+    }
+    .logo{
+      color: white;
+      font-size: 2em;
+      font-family: bop;
+    }
   </style>
 </head>
 

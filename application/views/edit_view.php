@@ -24,6 +24,15 @@ label {
   display: inline-block;
   width: 200px;
 }
+@font-face{
+  font-family: bop;
+  src: url('/assets/font-awesome/fonts/bop.ttf');
+}
+.logo{
+  color: white;
+  font-size: 2em;
+  font-family: bop;
+}
 </style>
 
 </head>
@@ -137,9 +146,9 @@ label {
                       <label>Name:</label><input type = "text" name = "name">
                       <label>Description:</label><input type = "text" name = "description">
                       <label>Price:</label><input type = "text" name = "price">
-                      
+
                         <input type="submit" value="update information">
-                    
+
                 </form>
             </div>
         </div>

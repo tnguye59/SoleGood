@@ -17,6 +17,17 @@
     <meta name="author" content="">
 
     <title>Sole Shoes Dashboard</title>
+    <style media="screen">
+    @font-face{
+      font-family: bop;
+      src: url('/assets/font-awesome/fonts/bop.ttf');
+    }
+    .logo{
+      color: white;
+      font-size: 2em;
+      font-family: bop;
+    }
+    </style>
 
 
     <!-- Bootstrap Core CSS -->

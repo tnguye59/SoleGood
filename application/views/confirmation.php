@@ -16,6 +16,17 @@ $userData = $this->session->userdata('userInfo');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <style media="screen">
+    @font-face{
+      font-family: bop;
+      src: url('/assets/font-awesome/fonts/bop.ttf');
+    }
+    .logo{
+      color: white;
+      font-size: 2em;
+      font-family: bop;
+    }
+    </style>
 
     <title>Sole Shoes Dashboard</title>
 
@@ -107,7 +118,7 @@ $userData = $this->session->userdata('userInfo');
             <p><?= $order_details['address'].', '.$order_details['city'].', '.$order_details['zip_code'] ?></p>
         <P>Telephone Number: <?= $order_details['phone_number'] ?></p>
         </div>
-        <p id = "shippinginfo">Total Price: $<?= $order_details['total_price']?></p>  
+        <p id = "shippinginfo">Total Price: $<?= $order_details['total_price']?></p>
     </div>
 
 </body>

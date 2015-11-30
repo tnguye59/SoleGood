@@ -25,6 +25,15 @@
     {
         height: 500px;
     }
+    @font-face{
+      font-family: bop;
+      src: url('/assets/font-awesome/fonts/bop.ttf');
+    }
+    .logo{
+      color: white;
+      font-size: 2em;
+      font-family: bop;
+    }
 
    </style>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
