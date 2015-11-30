@@ -48,9 +48,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = 'solegood.cmsj3gupbwyf.us-west-1.rds.amazonaws.com';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'root';
+$db['default']['password'] = 'rootroot';
 $db['default']['database'] = 'soleGood';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
