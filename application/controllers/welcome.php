@@ -17,41 +17,25 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	 public function __construct()
-	 	{
-	 		parent::__construct();
-			// $this->load->library('Cart');
-
-	 		// $this->output->enable_profiler(TRUE);
-
-	 	}
-	public function index()
-	{
+	public function index(){
 		// $this->output->enable_profiler(TRUE);
 		$this->load->view('home');
 	}
-	public function about()
-
-	{
+	public function about(){
 		$this->load->view('about');
 	}
-	public function contact()
-	{
+	public function contact(){
 		$this->load->view('contact');
 	}
-	public function shoes()
-	{
+	public function shoes(){
 		$this->load->view('shoes');
 	}
-	public function item_view()
-	{
+	public function item_view(){
 		$this->load->view('item_view');
 	}
-	public function checkout()
-	{
+	public function checkout(){
 		$this->load->view('checkout');
 	}
-
 	public function cart(){
 		$this->load->view('cart');
 	}
