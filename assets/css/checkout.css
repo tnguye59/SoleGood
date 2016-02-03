@@ -1,0 +1,18 @@
+#home {
+	margin-left: 970px;
+}
+
+form label {
+	display: inline-block;
+	width: 200px;
+}
+form {
+	width: 400px;
+	border: 1px solid black;
+	margin-left: 25%;
+	padding: 10px;
+}
+
+#backtocart {
+	margin-left: 950px;
+}

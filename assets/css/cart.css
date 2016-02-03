@@ -1,0 +1,26 @@
+.links {
+	margin-left: 20px;
+}
+#home {
+	margin-left: 970px;
+}
+
+#footer
+{
+	margin-left: 950px;
+}
+
+#maincontent {
+	border: 1px solid black;
+}
+	#maincontent h3 {
+		margin-left: 20px;
+	}
+
+.productinfo {
+	border: 1px solid black;
+	height: 200px;
+	width: 800px;
+	margin-left: 25%;
+	margin-bottom: 20px;
+}
