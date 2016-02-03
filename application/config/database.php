@@ -1,21 +1,10 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$url = parse_url(getenv("CLEARDB\_DATABASE\_URL"));
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 
-// Staging and Production
-$db['default'] = array(
-    'hostname'		=> 	$url["host"],
-    'username'		=> 	$url["user"],
-    'password'		=> 	$url["pass"],
-    'database'		=> 	substr($url["path"], 1),
-    'dbdriver' 		=> 	'mysqli',
-    'active_r' 		=>	true,
-    'pconnect' 		=>	false,
-    'db_debug' 		=>	true,
-    'cache_on' 		=>	false,
-    'char_set' 		=>	'utf8',
-    'dbcollat' 		=>	'utf8_unicode_ci',
-);
-
-// Assign the group to be used
-$active_group = 'default';
+$conn = new mysqli($server, $username, $password, $db);
+?>
