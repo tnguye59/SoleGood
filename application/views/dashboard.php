@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sole Shoes Dashboard</title>
+    <title>Your Dashboard</title>
     <style media="screen">
     @font-face{
       font-family: bop;

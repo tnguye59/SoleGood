@@ -172,9 +172,21 @@
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                         </button></a></td>
                         <td>
-                        <a href="/orders/checkout_view"><button type="button" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></a></td>
+<?php
+                      if($this->session->userdata('userInfo')){
+?>
+
+											<a href="/orders/checkout_view"><button type="button" class="btn btn-success">
+													Checkout <span class="glyphicon glyphicon-play"></span>
+											</button></a></td>
+<?php                 } else {
+
+?>
+											<a href="/users"><button type="button" class="btn btn-success">
+													Checkout <span class="glyphicon glyphicon-play"></span>
+											</button></a></td>
+<?php                 }
+?>
                     </tr>
                 </tbody>
             </table>
