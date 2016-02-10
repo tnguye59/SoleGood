@@ -24,7 +24,7 @@
         width: 320px;
         height: 200;
     }
-    
+
   </style>
 
     <meta charset="utf-8">
@@ -33,7 +33,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sole Shoes Home Page</title>
+    <title>Sole Good</title>
 
 
     <!-- Bootstrap Core CSS -->

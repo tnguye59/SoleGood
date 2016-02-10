@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sole Shoes about page</title>
+    <title><?= $product_info['name']?></title>
     <style media="screen">
     @font-face{
       font-family: bop;
@@ -47,7 +47,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/">Sole Good!</a>
+              <a class="navbar-brand logo" href="/">Sole Good!</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

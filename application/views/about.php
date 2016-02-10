@@ -166,7 +166,7 @@
             <div class="col-md-6">
                 <h2>About Sole Good!</h2>
               <p>
-                We are blah blah blah blah blah blah blah blah blah
+                We are all about providing the best for your soles. How good? Sole Good!
               </p>
             </div>
         </div>
@@ -174,7 +174,7 @@
 
 
         <!-- Team Members -->
-        
+
 
         <!-- Footer -->
         <footer>
