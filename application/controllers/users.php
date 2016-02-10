@@ -34,6 +34,7 @@ class Users extends CI_Controller {
 			// die('in register method');
 			$this->User->add_user($userData);
 			$userData = $this->User->get_user_by_email($this->input->post());
+			
 			// var_dump($userData);
 			// die('in register');
 			// $this->session->set_userdata('userInfo', $userData);
@@ -59,7 +60,7 @@ class Users extends CI_Controller {
 			redirect('/users');
 		}
 		$email = $this->input->post('email');
-		$password = $this->input->post('password');
+		$password = md5($this->input->post('password'));
 		$post = $this->input->post();
 		// var_dump($post);
 		// die();
@@ -95,7 +96,7 @@ class Users extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('/');
 	}
-	
+
 	public function dashboard(){
 		// var_dump($this->session->userdata('userInfo'));
 		$userData = $this->session->userdata('userInfo');
