@@ -127,7 +127,7 @@
                     if($userData['is_admin'] == 'true'){
                     ?>
                     <li><a href="/products/addnew">Add Products</a></li>
-                    <li class="active"><a href="/products/editinfo">Edit Products</li>
+                    <li class="active"><a href="/products/editinfo">Edit Products</a></li>
                   <?php
                     }
                     ?>
@@ -176,7 +176,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; So Good 2015</p>
+                    <p>Copyright &copy; Sole Good 2015</p>
                 </div>
             </div>
         </footer>
